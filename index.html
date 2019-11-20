@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JSSim</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link href="https://codemirror.net/lib/codemirror.css" rel="stylesheet" type="text/css">
+  <link href="https://codemirror.net/theme/abcdef.css" rel="stylesheet" type="text/css">
+  <script src="https://codemirror.net/lib/codemirror.js"></script>
+  <script src="https://codemirror.net/addon/edit/matchbrackets.js"></script>
+  <script src="https://codemirror.net/addon/comment/comment.js"></script>
+  <script src="https://codemirror.net/mode/javascript/javascript.js"></script>
+  <script src="acorn.js"></script>
+  <script src="interpreter.js"></script>
+</head>
+<body>
+  <h1>JS Simulation</h1>
+  <p><textarea id="code" name="code">
+    let test = {
+      'somekey': 1234
+    };
+    console.log("Hello".split("").map(x => x+"!").join());
+</textarea><br>
+  <button onclick="parseButton()">Parse</button>
+  <button onclick="stepButton()" id="stepButton" disabled="disabled">Step</button>
+  <button onclick="stepAllButton()" id="stepAllButton" disabled="disabled">Step All</button>
+  <button onclick="runButton()" id="runButton" disabled="disabled">Run</button>
+  </p>
+  <script src="ui.js"></script>
+  <div id="log"></div>
+</body>
+</html>
